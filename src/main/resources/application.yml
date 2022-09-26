@@ -1,0 +1,44 @@
+#creating multipal profiles in single file
+spring:
+  profiles:
+    active: qa
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password:
+    url: 'jdbc:mysql://localhost:3306/spring '
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password:
+    url: 'jdbc:mysql://localhost:3306/spring_qa '
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password:
+    url: 'jdbc:mysql://localhost:3306/spring_prod '
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
